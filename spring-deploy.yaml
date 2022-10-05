@@ -1,0 +1,20 @@
+# spring-deploy.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-deploy # deployment的名字
+spec:
+  selector:
+    matchLabels:
+      app: springboot
+  replicas: 3  # 水平生成pod的复制集
+  # 生成pod的模板
+  template:
+    metadata:
+      labels:
+        app: springboot
+    spec:
+      containers:
+      - name: springboot
+        image: johnyucn525/springboot-demo

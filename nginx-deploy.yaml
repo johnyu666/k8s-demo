@@ -1,0 +1,20 @@
+# nginx-deploy.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy # deployment的名字
+spec:
+  selector:
+    matchLabels:
+      app: nginx-web
+  replicas: 10  # 水平生成pod的复制集
+  # 生成pod的模板
+  template:
+    metadata:
+      labels:
+        app: nginx-web
+    spec:
+      containers:
+      - name: nginx
+        image: nginx

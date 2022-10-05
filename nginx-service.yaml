@@ -1,0 +1,14 @@
+#nginx-service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+spec:
+  type: NodePort
+  ports:
+    - port: 9000
+      targetPort: 80
+      nodePort: 30001
+  selector:
+    app: nginx-web

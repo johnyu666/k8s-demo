@@ -1,0 +1,10 @@
+# nginx-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-singlels
+spec:
+  containers:
+  - name: nginx-single
+    image: "nginx"

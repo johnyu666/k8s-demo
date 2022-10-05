@@ -1,0 +1,12 @@
+# nginx-tomcat-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-tomcat-pod-single
+spec:
+  containers:
+  - name: nginx-single
+    image: "nginx"
+  - name: tomcat-single
+    image: "tomcat:8"

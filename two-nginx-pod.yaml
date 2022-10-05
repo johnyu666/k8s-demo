@@ -1,0 +1,23 @@
+# two-nginx-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod4
+  labels:
+    app: nginx-web
+spec:
+  containers:
+  - name: nginx1
+    image: "nginx"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod5
+  labels:
+    app: nginx-web
+spec:
+  containers:
+  - name: nginx2
+    image: "nginx"
