@@ -7,8 +7,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 9000
-      targetPort: 80
-      nodePort: 30001
+    - port: 9000  # service即ClusterPort
+      targetPort: 80 # PodPort 
+      nodePort: 30001 # NodePort,所有的Node都打开此端口
   selector:
     app: nginx-web
