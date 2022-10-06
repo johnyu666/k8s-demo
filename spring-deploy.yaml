@@ -1,4 +1,4 @@
-# spring-deploy.yaml
+# spring-deploy.yaml 使用自己开发的微服务进行布署
 
 apiVersion: apps/v1
 kind: Deployment
@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: springboot
-  replicas: 3  # 水平生成pod的复制集
+  replicas: 2  # 水平生成pod的复制集
   # 生成pod的模板
   template:
     metadata:

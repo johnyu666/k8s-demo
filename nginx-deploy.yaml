@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: nginx-web
-  replicas: 10  # 水平生成pod的复制集
+  replicas: 2  # 水平生成pod的复制集
   # 生成pod的模板
   template:
     metadata:
