@@ -1,0 +1,16 @@
+## 演示如何使用configMap,参考：config-map.yaml
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: box2
+spec: 
+  containers:
+  - name: test-container
+    image: busybox
+    command: ["tail","-f","/dev/null"]
+    env:
+    - name: ADDR  # 定义环境变量 ADDR，使用configmap/eshop 的 NACOS_ADDR key
+      valueFrom: 
+        configMapKeyRef:
+          name: eshop
+          key: NACOS_ADDR

@@ -1,0 +1,11 @@
+# busybox-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busy-pod-singlel
+spec:
+  containers:
+  - name: busy-single
+    image: "busybox"
+    command: ["tail","-f","/dev/null"]

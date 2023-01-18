@@ -1,0 +1,14 @@
+#nginx-service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc4
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 9004  # service即ClusterPort
+      targetPort: 80 # PodPort 
+      nodePort: 30004 # NodePort,所有的Node都打开此端口
+  selector:
+    app: nginx-web4

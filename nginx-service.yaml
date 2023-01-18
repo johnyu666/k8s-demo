@@ -3,12 +3,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-svc
+  name: nginx-svc3
 spec:
   type: NodePort
   ports:
-    - port: 9000  # service即ClusterPort
+    - port: 9003  # service即ClusterPort
       targetPort: 80 # PodPort 
-      nodePort: 30001 # NodePort,所有的Node都打开此端口
+      nodePort: 30003 # NodePort,所有的Node都打开此端口
   selector:
-    app: nginx-web
+    app: nginx-web3

@@ -11,7 +11,7 @@ kubectl run nginx-pod3 --image=nginx -l='app=nginx-web' --expose --port=80
 # 阻塞前台进程的方式启动pod
 kubectl run busy-pod1 -it --image=busybox 
 # 交互方式进入 pod 执行 bash
-kubectl exec -it busy-pod1 -- bash
+kubectl exec -it busy-pod1 -- sh
 
 # 为pod 追加 lable
 kubectl label pods nginx-pod1 app=nginx-web
@@ -31,3 +31,6 @@ kubectl expose pod/nginx-pod1 --name nginx-svc --port=9000 --target-port=80 --ty
 
 # 本地8888端口(只能是执行此命令的node)的请求转发到mypod的5000端口，同时绑定本地网卡，同样适用于servcie,deployment
 kubectl port-forward --address 0.0.0.0 pod/mypod 8888:5000
+
+# 利用字面量直接定义ConfigMap
+kubectl create configmap test-config --from-literal=NACOS_ADDR=192.168.31.164:8848

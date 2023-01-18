@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: eshop
+data:
+  NACOS_ADDR: 189.23.12.98:8848
+  product: |+ # 定义复杂结构的 config 的key
+    application:
+      name: "product-service"
+    server:
+      port: 3000

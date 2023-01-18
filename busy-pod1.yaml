@@ -1,0 +1,20 @@
+## 演示如何使用configMap,参考：config-map.yaml
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: box3
+spec: 
+  containers:
+  - name: container
+    image: busybox
+    volumeMounts:
+    - name: test-volume
+      mountPath: /app/config
+    command: ["tail","-f","/dev/null"]
+  volumes:  # 容器中的 /app/config/application.yaml 将获取到configmap/eshop 的 product key
+  - name: test-volume
+    configMap: 
+      name: eshop
+      items: 
+      - key: product
+        path: application.yaml
